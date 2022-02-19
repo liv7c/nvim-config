@@ -56,6 +56,8 @@ packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use 'nvim-lualine/lualine.nvim'
 
+  -- git
+  use "tpope/vim-fugitive"
   
   -- pretty web icons
   use 'kyazdani42/nvim-web-devicons'

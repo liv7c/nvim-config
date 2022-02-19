@@ -63,3 +63,8 @@ keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
+
+-- fugitive
+keymap("n", "<leader>gs", "<cmd>G<cr>", opts)
+keymap("n", "<leader>gh", "<cmd>diffget //3<cr>", opts)
+keymap("n", "<leader>gf", "<cmd>diffget //2<cr>", opts)
