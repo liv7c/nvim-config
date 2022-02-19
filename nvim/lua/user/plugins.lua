@@ -34,8 +34,13 @@ packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'onsails/lspkind-nvim'
+  use 'williamboman/nvim-lsp-installer' -- lsp installer for different language servers
 
-  use 'williamboman/nvim-lsp-installer'
+  -- treesitter for better syntax highlighting
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
 
   -- must have
   use 'tpope/vim-surround'
@@ -44,6 +49,7 @@ packer.startup(function(use)
   -- colorscheme and status line
   use 'EdenEast/nightfox.nvim'
   use 'nvim-lualine/lualine.nvim'
+
   
   -- pretty web icons
   use 'kyazdani42/nvim-web-devicons'
