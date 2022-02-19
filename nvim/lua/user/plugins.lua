@@ -35,6 +35,7 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'onsails/lspkind-nvim'
   use 'williamboman/nvim-lsp-installer' -- lsp installer for different language servers
+  use("jose-elias-alvarez/null-ls.nvim") -- for formatting, code actions
 
   -- treesitter for better syntax highlighting
   use {
@@ -45,6 +46,7 @@ packer.startup(function(use)
   -- must have
   use 'tpope/vim-surround'
   use "numToStr/Comment.nvim" -- for commenting
+  use("windwp/nvim-autopairs")
 
   -- fuzzy finder
   use 'nvim-telescope/telescope.nvim'

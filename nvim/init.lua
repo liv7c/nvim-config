@@ -1,4 +1,5 @@
 require 'user.options'
+require 'user.autopairs'
 require 'user.plugins'
 require 'user.colorscheme'
 require 'user.nvim-tree-config'
