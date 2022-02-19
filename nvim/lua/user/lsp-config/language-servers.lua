@@ -18,6 +18,10 @@ local on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
   end
 
+  if client.name == "gopls" then
+    client.resolved_capabilities.document_formatting = false
+  end
+
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -50,12 +54,24 @@ for _, name in pairs(servers) do
 	end
 end
 
+local enhance_server_opts = {
+  -- Provide settings that should only apply to the "eslintls" server
+  ["emmet_ls"] = function(opts)
+    opts.filetypes = { "html", "css", "typescriptreact", "javascriptreact" }
+  end,
+}
+
 lsp_installer.on_server_ready(function(server)
 	-- Specify the default options which we'll use to setup all servers
-	local default_opts = {
+	local opts = {
 		on_attach = on_attach,
 		capabilities = capabilities,
 	}
 
-	server:setup(default_opts)
+  if enhance_server_opts[server.name] then
+    -- Enhance the default opts with the server-specific ones
+    enhance_server_opts[server.name](opts)
+  end
+
+	server:setup(opts)
 end)
