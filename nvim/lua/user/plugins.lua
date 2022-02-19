@@ -46,6 +46,9 @@ packer.startup(function(use)
   use 'tpope/vim-surround'
   use "numToStr/Comment.nvim" -- for commenting
 
+  -- fuzzy finder
+  use 'nvim-telescope/telescope.nvim'
+
   -- colorscheme and status line
   use 'EdenEast/nightfox.nvim'
   use 'nvim-lualine/lualine.nvim'
