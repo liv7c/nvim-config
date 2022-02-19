@@ -42,6 +42,7 @@ packer.startup(function(use)
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate'
   }
+  use "JoosepAlviste/nvim-ts-context-commentstring" -- for file type aware commenting
 
   -- must have
   use 'tpope/vim-surround'
