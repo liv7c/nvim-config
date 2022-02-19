@@ -20,3 +20,11 @@ comment.setup {
     }
   end,
 }
+
+
+vim.cmd [[
+  " disable auto commenting on next line when using single line comments only
+  inoremap <expr> <enter> getline('.') =~ '^\s*//' ? '<enter><esc>S' : '<enter>'
+  nnoremap <expr> O getline('.') =~ '^\s*//' ? 'O<esc>S' : 'O'
+  nnoremap <expr> o getline('.') =~ '^\s*//' ? 'o<esc>S' : 'o'
+]]
