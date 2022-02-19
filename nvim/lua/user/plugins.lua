@@ -53,7 +53,7 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
 
   -- colorscheme and status line
-  use 'EdenEast/nightfox.nvim'
+  use "lunarvim/darkplus.nvim"
   use 'nvim-lualine/lualine.nvim'
 
   

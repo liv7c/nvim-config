@@ -11,7 +11,7 @@ o.cursorline = false                      -- highlight the current line
 o.number = true                           -- set numbered lines
 o.relativenumber = true                   -- set relative numbered lines
 o.numberwidth = 4                         -- set number column width to 2 {default 4}
-o.signcolumn = "number"                      -- always show the sign column, otherwise it would shift the text each time
+o.signcolumn = "number"                   -- always show the sign column, otherwise it would shift the text each time
 o.wrap = false                            -- display lines as one long line
 o.scrolloff = 8                           -- scroll off
 o.sidescrolloff = 8
@@ -46,3 +46,11 @@ o.incsearch = true                        -- set incremental search
 o.ignorecase = true                       -- ignore case in search patterns
 o.smartcase = true                        -- smart case
 o.smartindent = true                      -- make indenting smarter again
+
+local cmd = vim.cmd
+
+-- make comments and HTML attributes italic
+cmd [[highlight Comment cterm=italic term=italic gui=italic]]
+cmd [[highlight htmlArg cterm=italic term=italic gui=italic]]
+cmd [[highlight xmlAttrib cterm=italic term=italic gui=italic]]
+

@@ -1,4 +1,5 @@
 require 'user.options'
+require 'user.commands'
 require 'user.autopairs'
 require 'user.comments'
 require 'user.plugins'
