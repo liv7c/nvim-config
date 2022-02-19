@@ -33,4 +33,10 @@ packer.startup(function(use)
 
   -- colorscheme
   use 'EdenEast/nightfox.nvim'
+  
+  -- pretty web icons
+  use 'kyazdani42/nvim-web-devicons'
+
+  -- tree explorer
+  use 'kyazdani42/nvim-tree.lua'
 end)
