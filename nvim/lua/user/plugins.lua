@@ -27,6 +27,16 @@ packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" 
 
+  -- lsp
+  use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'onsails/lspkind-nvim'
+
+  use 'williamboman/nvim-lsp-installer'
+
   -- must have
   use 'tpope/vim-surround'
   use "numToStr/Comment.nvim" -- for commenting
