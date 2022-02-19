@@ -41,8 +41,9 @@ packer.startup(function(use)
   use 'tpope/vim-surround'
   use "numToStr/Comment.nvim" -- for commenting
 
-  -- colorscheme
+  -- colorscheme and status line
   use 'EdenEast/nightfox.nvim'
+  use 'nvim-lualine/lualine.nvim'
   
   -- pretty web icons
   use 'kyazdani42/nvim-web-devicons'
