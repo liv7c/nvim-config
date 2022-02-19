@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+CURRENTDIR="$(pwd)"
+HOMEDIR=/Users/oliviac
+
+sync_vim() {
+  for file in $(find nvim -name "*.lua" -o -name "*.vim"); do
+    mkdir -p ~/.config/nvim/lua
+    mkdir -p ~/.config/nvim/lua/user/lsp/settings
+
+    echo "Creating a symlink to $file in home directory"
+    ln -sf "${CURRENTDIR}/${file}" "${HOMEDIR}/.config/${file}"
+  done
+}
+
+sync_vim
+
+unset sync_vim
