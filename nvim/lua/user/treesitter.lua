@@ -12,7 +12,7 @@ configs.setup {
     disable = { "" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = true,
   },
-  indent = { enable = true },
+  indent = { enable = false },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,

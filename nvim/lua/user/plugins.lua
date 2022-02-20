@@ -44,6 +44,9 @@ packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring" -- for file type aware commenting
 
+  -- as long as problems with identation
+  use 'sheerun/vim-polyglot'
+
   -- must have
   use 'tpope/vim-surround'
   use "numToStr/Comment.nvim" -- for commenting
