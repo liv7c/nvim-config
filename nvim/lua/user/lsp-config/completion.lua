@@ -1,10 +1,17 @@
--- luasnip setup
-local luasnip = require 'luasnip'
+local cmp_status_ok, cmp = pcall(require, "cmp")
+if not cmp_status_ok then
+  return
+end
 
--- nvim-cmp setup
-local cmp = require 'cmp'
--- lspkind
-local lspkind = require("lspkind")
+local snip_status_ok, luasnip = pcall(require, "luasnip")
+if not snip_status_ok then
+  return
+end
+
+local lspkind_status_ok, lspkind = pcall(require, "lspkind")
+if not lspkind_status_ok then
+  return
+end
 
 cmp.setup {
   formatting = {

@@ -1,5 +1,10 @@
+local status_ok, nvim_tree = pcall(require, "nvim-tree")
+if not status_ok then
+  return
+end
+
 -- from https://github.com/kyazdani42/nvim-tree.lua
-require'nvim-tree'.setup {
+nvim_tree.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
   open_on_setup        = false,
