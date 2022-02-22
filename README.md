@@ -4,7 +4,8 @@ Neovim config using LSP (work in progress). All config files are written in Lua.
 
 ## Requirements
 
-This config works with a version of `neovim` that is **at least** `0.6.0`.
+- This config works with a version of `neovim` that is **at least** `0.6.0`.
+- You should also have `packer.nvim` installed. Check out [the installation instructions](https://github.com/wbthomason/packer.nvim#quickstart).
 
 ## Plugins used
 
@@ -21,7 +22,7 @@ Some of the plugins used:
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
-## Resources
+## Further resources
 
 If you feel like building your own config, here are some resources that I found really helpful:
 

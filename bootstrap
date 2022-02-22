@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 CURRENTDIR="$(pwd)"
-HOMEDIR=/Users/oliviac
+read -p "Enter home directory path (e.g.: /Users/myname): " HOMEDIR
+echo "You've entered $HOMEDIR"
+read -p "Continue? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
 sync_vim() {
   for file in $(find nvim -name "*.lua" -o -name "*.vim"); do
