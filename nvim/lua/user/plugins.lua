@@ -57,6 +57,7 @@ packer.startup(function(use)
 
   -- colorscheme and status line
   use "lunarvim/darkplus.nvim"
+  use 'tanvirtin/monokai.nvim'
   use 'nvim-lualine/lualine.nvim'
 
   -- git
