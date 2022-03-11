@@ -44,6 +44,8 @@ packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring" -- for file type aware commenting
 
+  use "folke/trouble.nvim"
+
   -- as long as problems with identation
   use 'sheerun/vim-polyglot'
 
