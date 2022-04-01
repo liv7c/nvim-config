@@ -45,7 +45,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'gopls', 'rust_analyzer', 'tsserver', 'emmet_ls', 'eslint', 'bashls' }
+local servers = { 'gopls', 'rust_analyzer', 'tsserver', 'eslint', 'bashls' }
 
 for _, name in pairs(servers) do
 	local server_is_found, server = lsp_installer.get_server(name)
@@ -59,9 +59,6 @@ end
 
 local enhance_server_opts = {
   -- Provide settings that should only apply to the "eslintls" server
-  ["emmet_ls"] = function(opts)
-    opts.filetypes = { "html", "css", "typescriptreact", "javascriptreact" }
-  end,
 }
 
 lsp_installer.on_server_ready(function(server)

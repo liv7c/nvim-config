@@ -64,7 +64,7 @@ packer.startup(function(use)
 
   -- git
   use "tpope/vim-fugitive"
-  
+
   -- pretty web icons
   use 'kyazdani42/nvim-web-devicons'
 
