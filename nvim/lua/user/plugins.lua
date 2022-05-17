@@ -58,9 +58,8 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
 
   -- colorscheme and status line
-  use "lunarvim/darkplus.nvim"
-  use 'tanvirtin/monokai.nvim'
   use 'nvim-lualine/lualine.nvim'
+  use "projekt0n/github-nvim-theme"
 
   -- git
   use "tpope/vim-fugitive"
