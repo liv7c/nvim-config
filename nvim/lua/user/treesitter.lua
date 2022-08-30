@@ -4,7 +4,30 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "all", 
+  ensure_installed = {
+    "bash",
+    "cpp",
+    "css",
+    "graphql",
+    "html",
+    "go",
+    "javascript",
+    "json",
+    "markdown",
+    "markdown_inline",
+    "php",
+    "python",
+    "regex",
+    "ruby",
+    "rust",
+    "scss",
+    "sql",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "yaml",
+  },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {

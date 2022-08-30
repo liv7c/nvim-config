@@ -4,6 +4,6 @@ if not status_ok then
 end
 
 require('user.lsp-config.language-servers')
+require('user.lsp-config.emmet')
 require('user.lsp-config.completion')
 require('user.lsp-config.null-ls')
-require('user.lsp-config.emmet')

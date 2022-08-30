@@ -27,6 +27,7 @@ if not configs.ls_emmet then
         'sss',
         'hbs',
         'handlebars',
+        'template',
       };
       root_dir = function(fname)
         return vim.loop.cwd()

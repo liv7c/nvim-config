@@ -59,7 +59,11 @@ packer.startup(function(use)
 
   -- colorscheme and status line
   use 'nvim-lualine/lualine.nvim'
+  use("gruvbox-community/gruvbox")  
   use "projekt0n/github-nvim-theme"
+  use 'shaunsingh/nord.nvim'
+  use 'marko-cerovac/material.nvim'
+  use 'tanvirtin/monokai.nvim'
 
   -- git
   use "tpope/vim-fugitive"
