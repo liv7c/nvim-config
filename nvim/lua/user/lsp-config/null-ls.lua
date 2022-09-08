@@ -18,7 +18,7 @@ null_ls.setup({
 	},
   on_attach = function(client)
     vim.diagnostic.config({
-        virtual_text = false
+        virtual_text = true
     })
 
     if client.server_capabilities.documentFormattingProvider then

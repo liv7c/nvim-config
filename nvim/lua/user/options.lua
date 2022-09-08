@@ -54,3 +54,22 @@ cmd [[highlight Comment cterm=italic term=italic gui=italic]]
 cmd [[highlight htmlArg cterm=italic term=italic gui=italic]]
 cmd [[highlight xmlAttrib cterm=italic term=italic gui=italic]]
 
+-- make background transparent
+cmd [[highlight Normal guibg=none]]
+cmd [[highlight NonText guibg=none]]
+
+local hl = function(thing, opts)
+    vim.api.nvim_set_hl(0, thing, opts)
+end
+
+hl("SignColumn", {
+  bg = "none",
+})
+
+hl("CursorLineNR", {
+  bg = "None"
+})
+
+hl("Normal", {
+  bg = "none"
+})
