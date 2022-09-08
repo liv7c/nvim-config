@@ -33,6 +33,10 @@ keymap("n", "<leader>l", "<C-w>l", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Navigate quick fix list
+keymap("n", "<C-k>", ":cnext<CR>", opts)
+keymap("n", "<C-j>", ":cprev<CR>", opts)
+
 -- copy the rest of the line from the location you are in the line
 keymap("n", "Y", "y$", opts)
 
@@ -53,6 +57,10 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+----------------------
+-- Plugins related ---
+----------------------
 
 -- nvim tree
 keymap("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", opts)
