@@ -1,10 +1,9 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-  return
+local status, nvimtree = pcall(require, "nvim-tree")
+if not status then
+    return
 end
 
--- from https://github.com/kyazdani42/nvim-tree.lua
-nvim_tree.setup {
+nvimtree.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
   open_on_setup        = false,
@@ -46,8 +45,6 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
-    height = 30,
     hide_root_folder = false,
     side = 'left',
     mappings = {

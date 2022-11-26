@@ -1,5 +1,4 @@
--- alias for vim.opt
-o = vim.opt
+local o = vim.opt
 
 ------------------  
 -- the basics
@@ -32,7 +31,7 @@ o.writebackup = false                     -- if a file is being edited by anothe
 -----------------
 o.backup = false                          -- creates a backup file
 o.swapfile = false                        -- creates a swapfile
-o.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+o.completeopt = { "menu", "menuone", "noselect" } -- mostly just for cmp
 o.conceallevel = 0                        -- so that `` is visible in markdown files
 o.fileencoding = "utf-8"                  -- the encoding written to a file
 o.pumheight = 10                          -- pop up menu height
@@ -53,23 +52,3 @@ local cmd = vim.cmd
 cmd [[highlight Comment cterm=italic term=italic gui=italic]]
 cmd [[highlight htmlArg cterm=italic term=italic gui=italic]]
 cmd [[highlight xmlAttrib cterm=italic term=italic gui=italic]]
-
--- make background transparent
-cmd [[highlight Normal guibg=none]]
-cmd [[highlight NonText guibg=none]]
-
-local hl = function(thing, opts)
-    vim.api.nvim_set_hl(0, thing, opts)
-end
-
-hl("SignColumn", {
-  bg = "none",
-})
-
-hl("CursorLineNR", {
-  bg = "None"
-})
-
-hl("Normal", {
-  bg = "none"
-})

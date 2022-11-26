@@ -72,12 +72,7 @@ keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
 
--- fugitive
-keymap("n", "<leader>gs", "<cmd>G<cr>", opts)
-keymap("n", "<leader>gh", "<cmd>diffget //3<cr>", opts)
-keymap("n", "<leader>gf", "<cmd>diffget //2<cr>", opts)
-
--- trouble
+-- trouble :)
 keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
 keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
@@ -85,3 +80,7 @@ keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
 keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
 keymap("n", "<leader>gR", "<cmd>Trouble lsp_references<cr>", opts)
 
+-- git fugitive
+keymap("n", "<leader>gs", "<cmd>G<cr>", opts)
+keymap("n", "<leader>gh", "<cmd>diffget //3<cr>", opts)
+keymap("n", "<leader>gf", "<cmd>diffget //2<cr>", opts)
