@@ -13,7 +13,7 @@ Some of the plugins used:
 
 - [packer](https://github.com/wbthomason/packer.nvim): plugin manager
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer/): to install language servers more easily
+- [mason](https://github.com/williamboman/mason.nvim): to install and manage LSP language servers and formatters
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim): for formatting and linting
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): for syntax highlighting
 - [telescope](https://github.com/nvim-telescope/telescope.nvim): for fuzzy finding
