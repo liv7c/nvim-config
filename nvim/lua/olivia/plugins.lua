@@ -54,6 +54,9 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim")
 
+	-- easier navigation
+	use("ThePrimeagen/harpoon")
+
 	-- autocompletion
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")

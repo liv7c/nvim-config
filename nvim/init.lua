@@ -14,6 +14,7 @@ require("olivia.plugins.nvim-cmp")
 require("olivia.plugins.trouble")
 require("olivia.plugins.autopairs")
 require("olivia.plugins.treesitter")
+require("olivia.plugins.harpoon")
 
 -- lsp
 require("olivia.plugins.lsp.mason")
