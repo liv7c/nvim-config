@@ -20,6 +20,9 @@ vim.g.maplocalleader = " "
 -- Normal --
 --------------
 
+-- paste without losing content in the registry
+keymap("n", "<leader>d", '"_d', opts)
+
 -- back and forth navigation
 keymap("n", ",,", "<C-^>", opts)
 
@@ -43,13 +46,18 @@ keymap("n", "Y", "y$", opts)
 -- make file executable
 keymap("n", "<leader>x", ":!chmod +x %<CR>", opts)
 
+-- quicker replace
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+
 -------------
 -- Visual --
 -------------
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+
+-- paste without losing content in the registry
+keymap("v", "<leader>p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
@@ -57,6 +65,9 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- paste without losing content in the registry
+keymap("x", "<leader>p", '"_dP', opts)
 
 ----------------------
 -- Plugins related ---
