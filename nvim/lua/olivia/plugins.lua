@@ -1,14 +1,14 @@
 local ensure_packer = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-        vim.cmd [[packadd packer.nvim]]
-        return true
-    end
-    return false
+	local fn = vim.fn
+	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+	if fn.empty(fn.glob(install_path)) > 0 then
+		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+		vim.cmd([[packadd packer.nvim]])
+		return true
+	end
+	return false
 end
-  
+
 local packer_bootstrap = ensure_packer()
 
 vim.cmd([[
@@ -18,80 +18,83 @@ vim.cmd([[
   augroup end
 ]])
 
-local status, packer = pcall(require, 'packer')
+local status, packer = pcall(require, "packer")
 if not status then
-    return
+	return
 end
-  
+
 return packer.startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use { "ellisonleao/gruvbox.nvim" }
+	use("wbthomason/packer.nvim")
 
-    -- essential plugins
-    use 'tpope/vim-surround'
-    use "numToStr/Comment.nvim"
-    use("windwp/nvim-autopairs")
-    use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
-    
-    -- tree plugin
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-          'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-    }
+	-- colorschemes
+	use("sainnhe/gruvbox-material")
+	use("tomasiser/vim-code-dark")
 
-    -- status line
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+	-- essential plugins
+	use("tpope/vim-surround")
+	use("numToStr/Comment.nvim")
+	use("windwp/nvim-autopairs")
+	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-    -- fuzzy finder
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
+	-- tree plugin
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+	})
 
-    -- autocompletion
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
+	-- status line
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
 
-    -- snippets
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
-    use "rafamadriz/friendly-snippets"
+	-- fuzzy finder
+	use("nvim-lua/plenary.nvim")
+	use("nvim-telescope/telescope.nvim")
 
-    -- lsp
-    -- for mananing and installing lsp servers and formatters
-    use { "williamboman/mason.nvim" } 
-    use { "williamboman/mason-lspconfig.nvim" } 
+	-- autocompletion
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
 
-    -- for configuring lsp servers
-    use { "neovim/nvim-lspconfig" }
-    use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-    use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-    use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+	-- snippets
+	use("L3MON4D3/LuaSnip")
+	use("saadparwaiz1/cmp_luasnip")
+	use("rafamadriz/friendly-snippets")
 
-    -- for formatting and linting
-    use("jose-elias-alvarez/null-ls.nvim")
-    use("jayp0521/mason-null-ls.nvim")
+	-- lsp
+	-- for mananing and installing lsp servers and formatters
+	use({ "williamboman/mason.nvim" })
+	use({ "williamboman/mason-lspconfig.nvim" })
 
-    -- easier error navigation
-    use "folke/trouble.nvim"
+	-- for configuring lsp servers
+	use({ "neovim/nvim-lspconfig" })
+	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
-    -- treesitter
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        run = function()
-          local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-          ts_update()
-        end,
-      })
+	-- for formatting and linting
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("jayp0521/mason-null-ls.nvim")
 
-    -- git
-    use "tpope/vim-fugitive"
+	-- easier error navigation
+	use("folke/trouble.nvim")
 
-    if packer_bootstrap then
-        require('packer').sync()
-    end
+	-- treesitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+			ts_update()
+		end,
+	})
+
+	-- git
+	use("tpope/vim-fugitive")
+
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)
