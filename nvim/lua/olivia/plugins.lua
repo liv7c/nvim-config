@@ -32,7 +32,7 @@ return packer.startup(function(use)
 
 	-- essential plugins
 	use("tpope/vim-surround")
-	use("numToStr/Comment.nvim")
+	use("tpope/vim-commentary")
 	use("windwp/nvim-autopairs")
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
