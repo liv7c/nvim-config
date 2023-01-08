@@ -27,8 +27,8 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- colorschemes
-	use("sainnhe/gruvbox-material")
-	use("tomasiser/vim-code-dark")
+	use("shaunsingh/nord.nvim")
+	use("Mofiqul/dracula.nvim")
 
 	-- essential plugins
 	use("tpope/vim-surround")
