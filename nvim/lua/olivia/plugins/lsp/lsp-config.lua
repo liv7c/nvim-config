@@ -53,6 +53,12 @@ lspconfig["gopls"].setup({
 	on_attach = on_attach,
 })
 
+-- configure rust server
+lspconfig["rust_analyzer"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure go server
 lspconfig["prismals"].setup({
 	capabilities = capabilities,
@@ -83,7 +89,18 @@ lspconfig["tailwindcss"].setup({
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "handlebars" },
+	filetypes = {
+		"html",
+		"atro",
+		"typescriptreact",
+		"javascriptreact",
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"svelte",
+		"handlebars",
+	},
 })
 
 -- configure lua server (with special settings)
