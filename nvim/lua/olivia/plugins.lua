@@ -29,6 +29,9 @@ return packer.startup(function(use)
 	-- colorschemes
 	use("shaunsingh/nord.nvim")
 	use("Mofiqul/dracula.nvim")
+	use("mhartington/oceanic-next")
+	-- use({ "catppuccin/nvim", as = "catppuccin" })
+	use("gruvbox-community/gruvbox")
 
 	-- essential plugins
 	use("tpope/vim-surround")
