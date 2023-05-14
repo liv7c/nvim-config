@@ -19,7 +19,7 @@ mason.setup()
 mason_lspconfig.setup({
 	ensure_installed = {
 		"tsserver",
-		"sumneko_lua",
+		"lua_ls",
 		"astro",
 		"gopls",
 		"rust_analyzer",
