@@ -1,14 +1,4 @@
--- vim.g.gruvbox_material_background = "hard"
--- vim.g.gruvbox_contrast_dark = "hard"
--- vim.g.gruvbox_contrast_light = "hard"
--- vim.g.gruvbox_italic = 1
--- vim.g.gruvbox_transparent_bg = 1
--- local colorscheme = "gruvbox"
--- local colorscheme = "dracula"
-vim.g.oceanic_next_terminal_italic = 1
-vim.g.oceanic_next_terminal_bold = 0
-
-local colorscheme = "OceanicNext"
+local colorscheme = "nightfox"
 
 local status, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status then

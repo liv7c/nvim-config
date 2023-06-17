@@ -26,12 +26,21 @@ end
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
-	-- colorschemes
-	use("shaunsingh/nord.nvim")
-	use("Mofiqul/dracula.nvim")
-	use("mhartington/oceanic-next")
-	-- use({ "catppuccin/nvim", as = "catppuccin" })
-	use("gruvbox-community/gruvbox")
+	use({
+		"EdenEast/nightfox.nvim",
+		config = function()
+			require("nightfox").setup({
+				options = {
+					styles = {
+						comments = "italic",
+					},
+					colorblind = {
+						enable = true,
+					},
+				},
+			})
+		end,
+	})
 
 	-- essential plugins
 	use("tpope/vim-surround")
