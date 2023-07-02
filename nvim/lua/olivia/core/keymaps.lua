@@ -82,6 +82,7 @@ keymap("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>lR", "<cmd>Telescope lsp_references<cr>", opts)
 
 -- trouble :)
 keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
