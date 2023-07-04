@@ -4,7 +4,8 @@ Neovim config using LSP (work in progress). All config files are written in Lua.
 
 ## Requirements
 
-- This config works with a version of `neovim` that is **at least** `0.6.0`.
+- Install [`fd`](https://github.com/sharkdp/fd) and [`ripgrep`](https://github.com/BurntSushi/ripgrep). Those two packages are important for the Telescope plugin to work.
+- This config has been tested with a version of `neovim` that is **at least** `0.9.1`
 - You should also have `packer.nvim` installed. Check out [the installation instructions](https://github.com/wbthomason/packer.nvim#quickstart).
 
 ## Plugins used
