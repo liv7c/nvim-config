@@ -49,6 +49,9 @@ keymap("n", "<leader>x", ":!chmod +x %<CR>", opts)
 -- quicker replace
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
+-- copy file path to the clipboard
+keymap("n", "<leader>cp", ':let @+ = expand("%:p")<CR>', opts)
+
 -------------
 -- Visual --
 -------------
