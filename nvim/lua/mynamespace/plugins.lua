@@ -12,22 +12,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- colorscheme
-	{
-		"rose-pine/neovim",
-		as = "rose-pine",
-		styles = { italic = false },
-	},
+	"sainnhe/gruvbox-material",
+
 	-- essential plugins
 	"tpope/vim-surround",
 	"tpope/vim-commentary",
 	"windwp/nvim-autopairs",
 	{ "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
 	{
-			"nvim-tree/nvim-tree.lua",
-			requires = {
-				"nvim-tree/nvim-web-devicons", -- optional, for file icons
-			},
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
 	},
+
 	-- tree + cooler status line
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -35,7 +33,8 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons", -- optional, for file icons
 		},
 	},
-	{"nvim-lualine/lualine.nvim",
+	{
+		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	},
 
