@@ -27,20 +27,26 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	use({
-		"EdenEast/nightfox.nvim",
-		config = function()
-			require("nightfox").setup({
-				options = {
-					styles = {
-						comments = "italic",
-					},
-					colorblind = {
-						enable = true,
-					},
-				},
-			})
-		end,
+		"rose-pine/neovim",
+		as = "rose-pine",
+		styles = { italic = false },
 	})
+
+	-- use({
+	-- 	"EdenEast/nightfox.nvim",
+	-- 	config = function()
+	-- 		require("nightfox").setup({
+	-- 			options = {
+	-- 				styles = {
+	-- 					comments = "italic",
+	-- 				},
+	-- 				colorblind = {
+	-- 					enable = true,
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- })
 
 	-- essential plugins
 	use("tpope/vim-surround")

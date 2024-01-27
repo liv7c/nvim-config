@@ -100,6 +100,7 @@ lspconfig["emmet_ls"].setup({
 		"less",
 		"svelte",
 		"handlebars",
+		"template",
 	},
 })
 
