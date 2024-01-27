@@ -6,7 +6,30 @@ This configuration uses LSP, and all configuration files are written in Lua. I u
 
 First, you need to install [`fd`](https://github.com/sharkdp/fd) and [`ripgrep`](https://github.com/BurntSushi/ripgrep), as they are both necessary for the Telescope plugin to work. Telescope is a great fuzzy finder handy when navigating a code base.
 
-Additionally, this configuration requires ** at least version 0.9.2 of neovim **. If you still need to install it or have an older version of neovim, you can check out the [neovim installation documentation](https://github.com/neovim/neovim/blob/master/INSTALL.md).
+Additionally, this configuration requires **at least version 0.9.2 of neovim**. If you still need to install it or have an older version of neovim, you can check out the [neovim installation documentation](https://github.com/neovim/neovim/blob/master/INSTALL.md).
+
+## Installation on MacOS
+
+First, clone this repository.
+
+```sh
+git clone https://github.com/liv7c/nvim-config
+```
+
+Back up your current neovim configuration if you have one.
+
+```sh
+mv ~/.config/nvim ~/.config/nvim_bak
+```
+
+Then, you must make the `bootstrap` file executable and run the script. This file is a small bash script that creates symlinks for each file in this configuration.
+
+```sh
+chmod +x bootstrap
+./bootstrap 
+```
+
+You now have a series of folders and files in your `~/.config/nvim` folder. To update the configuration, you can edit the files in your cloned repository. 
 
 ## Plugins used
 
@@ -22,6 +45,7 @@ Some of the plugins I use include:
 - [vim-surround](https://github.com/tpope/vim-surround)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+
 
 ## Further resources
 

@@ -6,9 +6,9 @@ HOMEDIR="$HOME"
 sync_vim() {
   for file in $(find nvim -name "*.lua" -o -name "*.vim"); do
     mkdir -p ~/.config/nvim/lua
-    mkdir -p ~/.config/nvim/lua/olivia/core
-    mkdir -p ~/.config/nvim/lua/olivia/plugins
-    mkdir -p ~/.config/nvim/lua/olivia/plugins/lsp
+    mkdir -p ~/.config/nvim/lua/mynamespace/core
+    mkdir -p ~/.config/nvim/lua/mynamespace/plugins
+    mkdir -p ~/.config/nvim/lua/mynamespace/plugins/lsp
 
     echo "Creating a symlink to $file in home directory"
     ln -sf "${CURRENTDIR}/${file}" "${HOMEDIR}/.config/${file}"
