@@ -1,18 +1,16 @@
-# My neovim config
+ # My neovim config
 
-Neovim config using LSP. All config files are written in Lua.
-It uses `lazy.nvim` as a plugin manager.
+This configuration uses LSP, and all configuration files are written in Lua. I use `lazy.nvim` for plugin management.
 
 ## Requirements
 
-There are a couple of dependencies necessary for this configuration to work.
+First, you need to install [`fd`](https://github.com/sharkdp/fd) and [`ripgrep`](https://github.com/BurntSushi/ripgrep), as they are both necessary for the Telescope plugin to work. Telescope is a great fuzzy finder handy when navigating a code base.
 
-- Install [`fd`](https://github.com/sharkdp/fd) and [`ripgrep`](https://github.com/BurntSushi/ripgrep). Those two packages are important for the Telescope plugin to work.
-- This config has been tested with a version of `neovim` that is **at least** `0.9.2`. If you haven't installed or have an older version of neovim, check out the [neovim installation documentation](https://github.com/neovim/neovim/blob/master/INSTALL.md).
+Additionally, this configuration requires ** at least version 0.9.2 of neovim **. If you still need to install it or have an older version of neovim, you can check out the [neovim installation documentation](https://github.com/neovim/neovim/blob/master/INSTALL.md).
 
 ## Plugins used
 
-Some of the plugins used:
+Some of the plugins I use include:
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim): it is a plugin manager specifically developed for neovim ❤️
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
@@ -27,8 +25,8 @@ Some of the plugins used:
 
 ## Further resources
 
-If you feel like building your own config, here are some resources that I have found really helpful:
+If you're interested in building your neovim configuration, I recommend checking these resources:
 
-- [Neovim from scratch by chris@machine](https://www.youtube.com/playlist?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ): great playlist to get started configuring neovim using lua.
+- [Neovim from scratch by chris@machine](https://www.youtube.com/playlist?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 - [Neovim from scratch repository](https://github.com/LunarVim/Neovim-from-scratch)
-- [Configuring neovim by Tuff Gniuz](https://www.youtube.com/playlist?list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w): another great series of videos on configuring neovim.
+- [Configuring neovim by Tuff Gniuz](https://www.youtube.com/playlist?list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w)
