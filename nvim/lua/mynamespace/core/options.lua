@@ -3,8 +3,8 @@ local o = vim.opt
 ------------------
 -- the basics
 ----------------
--- o.background = "light"
-o.background = "dark"
+o.background = "light"
+-- o.background = "dark"
 o.expandtab = true -- convert tabs to spaces
 o.shiftwidth = 2 -- the number of spaces inserted for each indentation
 o.tabstop = 2 -- insert 2 spaces for a tab
