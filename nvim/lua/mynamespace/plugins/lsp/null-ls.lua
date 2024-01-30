@@ -24,7 +24,7 @@ null_ls.setup({
 		diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc
 			condition = function(utils)
-				return utils.root_has_file(".eslintrc")
+				return utils.root_has_file(".eslintrc") or utils.root_has_file(".eslintrc.js")
 			end,
 		}),
 	},
