@@ -13,6 +13,8 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 	-- setup formatters & linters
 	sources = {
+		null_ls.builtins.diagnostics.ruff,
+		null_ls.builtins.formatting.black,
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.prettierd.with({

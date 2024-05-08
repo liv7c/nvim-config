@@ -14,7 +14,6 @@ require("mynamespace.plugins.nvim-cmp")
 require("mynamespace.plugins.trouble")
 require("mynamespace.plugins.autopairs")
 require("mynamespace.plugins.treesitter")
-require("mynamespace.plugins.harpoon")
 
 -- lsp
 require("mynamespace.plugins.lsp.mason")

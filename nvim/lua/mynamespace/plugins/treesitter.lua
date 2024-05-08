@@ -23,6 +23,7 @@ treesitter.setup({
 		"html",
 		"css",
 		"go",
+		"python",
 		"markdown",
 		"svelte",
 		"graphql",

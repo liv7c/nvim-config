@@ -29,6 +29,7 @@ mason_lspconfig.setup({
 		"tailwindcss",
 		"prismals",
 		"emmet_ls",
+		"pyright",
 	},
 })
 

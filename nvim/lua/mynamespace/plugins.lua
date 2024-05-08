@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- colorscheme
 	"sainnhe/gruvbox-material",
+	"rebelot/kanagawa.nvim",
 
 	-- essential plugins
 	"tpope/vim-surround",
@@ -41,9 +42,6 @@ require("lazy").setup({
 	-- fuzzy finder
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
-
-	-- easier navigation
-	"ThePrimeagen/harpoon",
 
 	-- autocompletion
 	"hrsh7th/nvim-cmp",
