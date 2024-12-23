@@ -48,7 +48,6 @@ return {
         },
       })
     end },
-    { '<leader>h', function() require('telescope.builtin').help_tags() end },
     { '<leader>s', function() require('telescope.builtin').lsp_document_symbols() end },
   },
   config = function()

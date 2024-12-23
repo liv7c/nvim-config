@@ -31,11 +31,16 @@ vim.keymap.set('v', 'p', '"_dP')
 
 -- Visual Block --
 -- Move text up and down
+local opts = { noremap = true, silent = true }
+
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Easy insertion of a trailing ; or , from insert mode.
-vim.keymap.set('i', ';;', '<Esc>A;<Esc>')
-vim.keymap.set('i', ',,', '<Esc>A,<Esc>')
+-- easier navigation
+vim.keymap.set("n", "<leader>h", "<C-w>h", opts)
+vim.keymap.set("n", "<leader>j", "<C-w>j", opts)
+vim.keymap.set("n", "<leader>k", "<C-w>k", opts)
+vim.keymap.set("n", "<leader>l", "<C-w>l", opts)
+
