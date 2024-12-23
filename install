@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+NVIM_CONFIG_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Neovim
+rm -rf $HOME/.config/nvim
+ln -s $NVIM_CONFIG_PATH/nvim $HOME/.config/nvim
