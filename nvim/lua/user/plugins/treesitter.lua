@@ -3,6 +3,9 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   event = 'VeryLazy',
+  ident = {
+    enable = false
+  },
   build = function()
     require('nvim-treesitter.install').update({ with_sync = true })
   end,
@@ -91,7 +94,7 @@ return {
     },
     indent = {
       enable = true,
-      disable = { "yaml" }
+      disable = { "html", "css", "javascript", "typescript" },
     },
     rainbow = {
       enable = true,

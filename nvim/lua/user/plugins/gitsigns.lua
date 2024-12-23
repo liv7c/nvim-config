@@ -15,6 +15,7 @@ return {
     preview_config = {
       border = { '', '', '', ' ' },
     },
+    signcolumn = true,
     current_line_blame = true,
     current_line_blame_opts = {
       virt_text = true,
