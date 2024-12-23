@@ -5,17 +5,19 @@ local o = vim.opt
 ----------------
 -- o.background = "light"
 o.background = "dark"
-o.expandtab = true          -- convert tabs to spaces
-o.shiftwidth = 2            -- the number of spaces inserted for each indentation
-o.tabstop = 2               -- insert 2 spaces for a tab
+o.expandtab = true      -- convert tabs to spaces
+o.shiftwidth = 2        -- the number of spaces inserted for each indentation
+o.tabstop = 2           -- insert 2 spaces for a tab
 
-o.cursorline = false        -- highlight the current line
-o.number = true             -- set numbered lines
-o.relativenumber = true     -- set relative numbered lines
-o.numberwidth = 4           -- set number column width to 2 {default 4}
-o.signcolumn = "number"     -- always show the sign column, otherwise it would shift the text each time
+o.cursorline = false    -- highlight the current line
+o.number = true         -- set numbered lines
+o.relativenumber = true -- set relative numbered lines
+o.numberwidth = 4       -- set number column width to 2 {default 4}
+o.signcolumn = "number" -- always show the sign column, otherwise it would shift the text each time
 
-o.wrap = false              -- display lines as one long line
+vim.opt.wrap = false
+vim.opt.breakindent = true  -- maintain indent when wrapping indented lines
+vim.opt.linebreak = true    -- wrap at word boundaries
 o.scrolloff = 8             -- scroll off
 o.sidescrolloff = 8
 o.cmdheight = 1             -- more space in the neovim command line for displaying messages
