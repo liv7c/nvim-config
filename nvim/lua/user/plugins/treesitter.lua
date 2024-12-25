@@ -139,6 +139,12 @@ return {
       },
     })
 
+    vim.filetype.add({
+      pattern = {
+        [".*%.njk"] = "html", -- Treat .njk files as html for highlighting
+      },
+    })
+
     require("nvim-treesitter.configs").setup(opts)
   end,
 }
