@@ -93,8 +93,8 @@ return {
       enable = true,
     },
     indent = {
-      enable = true,
-      disable = { "html", "css", "javascript", "typescript" },
+      enable = false,
+      disable = { "html", "css", "scss", "php", "go", "javascript", "typescript" },
     },
     rainbow = {
       enable = true,
