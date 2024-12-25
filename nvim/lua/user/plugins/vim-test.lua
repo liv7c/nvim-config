@@ -1,15 +1,15 @@
 -- Testing helper
 
 return {
-  'vim-test/vim-test',
+  "vim-test/vim-test",
   keys = {
-    { '<Leader>tn', ':silent TestNearest<CR>' },
-    { '<Leader>tf', ':silent TestFile<CR>' },
-    { '<Leader>ts', ':silent TestSuite<CR>' },
-    { '<Leader>tl', ':silent TestLast<CR>' },
-    { '<Leader>tv', ':silent TestVisit<CR>' },
+    { "<Leader>tn", ":silent TestNearest<CR>" },
+    { "<Leader>tf", ":silent TestFile<CR>" },
+    { "<Leader>ts", ":silent TestSuite<CR>" },
+    { "<Leader>tl", ":silent TestLast<CR>" },
+    { "<Leader>tv", ":silent TestVisit<CR>" },
   },
-  dependencies = { 'voldikss/vim-floaterm' },
+  dependencies = { "voldikss/vim-floaterm" },
   config = function()
     vim.cmd([[
       function! PhpUnitTransform(cmd) abort
@@ -31,5 +31,5 @@ return {
       let g:test#custom_strategies = {'floaterm': function('FloatermStrategy')}
       let g:test#strategy = 'floaterm'
     ]])
-  end
+  end,
 }

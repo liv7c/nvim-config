@@ -1,12 +1,12 @@
 -- Color scheme
 
 return {
-  'folke/tokyonight.nvim',
+  "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
   config = function(plugin, opts)
-    require('tokyonight').setup(opts)
+    require("tokyonight").setup(opts)
 
-    vim.cmd('colorscheme tokyonight')
+    vim.cmd("colorscheme tokyonight")
   end,
 }

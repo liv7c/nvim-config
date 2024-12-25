@@ -1,3 +1,3 @@
 -- Git commands.
 
-return { 'tpope/vim-fugitive', dependencies = 'tpope/vim-rhubarb' }
+return { "tpope/vim-fugitive", dependencies = "tpope/vim-rhubarb" }

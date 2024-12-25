@@ -1,3 +1,2 @@
-
 -- Improve default vim.ui interaces
-return { 'stevearc/dressing.nvim' }
+return { "stevearc/dressing.nvim" }

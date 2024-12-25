@@ -1,0 +1,28 @@
+{
+  "name": "nvim-config",
+  "version": "1.0.0",
+  "description": "Neovim config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liv7c/nvim-config.git"
+  },
+  "keywords": [
+    "neovim",
+    "lsp",
+    "vim"
+  ],
+  "author": "Olivia Coumans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liv7c/nvim-config/issues"
+  },
+  "homepage": "https://github.com/liv7c/nvim-config#readme",
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}

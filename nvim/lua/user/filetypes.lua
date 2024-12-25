@@ -1,8 +1,8 @@
-local group = vim.api.nvim_create_augroup('CustomIndentation', { clear = true })
+local group = vim.api.nvim_create_augroup("CustomIndentation", { clear = true })
 
-vim.api.nvim_create_autocmd('FileType', {
+vim.api.nvim_create_autocmd("FileType", {
   group = group,
-  pattern = { 'go', 'python', 'rust' },
+  pattern = { "go", "python", "rust" },
   callback = function()
     vim.bo.tabstop = 4
     vim.bo.shiftwidth = 4

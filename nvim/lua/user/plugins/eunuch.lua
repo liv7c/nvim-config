@@ -1,2 +1,2 @@
 -- Useful commands like :Rename and :SudoWrite.
-return { 'tpope/vim-eunuch' }
+return { "tpope/vim-eunuch" }

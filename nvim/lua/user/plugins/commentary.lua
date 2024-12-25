@@ -1,4 +1,4 @@
 -- Commenting
 return {
-  'tpope/vim-commentary',
+  "tpope/vim-commentary",
 }
