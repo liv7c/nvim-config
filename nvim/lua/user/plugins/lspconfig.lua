@@ -99,10 +99,11 @@ return {
     })
     setup_lsp("html")
     setup_lsp("cssls")
+    setup_lsp("astro", {})
     setup_lsp("emmet_ls", {
       filetypes = {
         "html",
-        "atro",
+        "astro",
         "typescriptreact",
         "javascriptreact",
         "css",
