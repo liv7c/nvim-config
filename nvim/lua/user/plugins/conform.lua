@@ -25,7 +25,7 @@ return {
       },
       html = { "prettierd", "prettier", stop_after_first = true },
       lua = { "stylua" },
-      astro = { "prettierd", "prettier", stop_after_first = true },
+      astro = { "prettier", stop_after_first = true },
     },
     format_on_save = {
       timeout_ms = 1000,
