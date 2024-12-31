@@ -10,3 +10,9 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.expandtab = true -- Ensure spaces are used instead of tabs
   end,
 })
+
+vim.filetype.add({
+  extension = {
+    mdx = "markdown", -- Treat MDX as markdown
+  },
+})

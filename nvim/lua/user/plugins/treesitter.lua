@@ -72,6 +72,7 @@ return {
       "lua",
       "make",
       "markdown",
+      "markdown_inline",
       "passwd",
       "php",
       "php_only",
