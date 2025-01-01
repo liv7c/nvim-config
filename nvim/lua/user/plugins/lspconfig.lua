@@ -99,7 +99,11 @@ return {
     })
     setup_lsp("html")
     setup_lsp("cssls")
-    setup_lsp("astro", {})
+    setup_lsp("astro", {
+      formatting = {
+        enable = true,
+      },
+    })
     setup_lsp("emmet_ls", {
       filetypes = {
         "html",
