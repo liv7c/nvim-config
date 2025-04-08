@@ -32,9 +32,7 @@ return {
         },
         function()
           return "󰅭 "
-            .. vim.pesc(
-              tostring(#vim.tbl_keys(vim.lsp.buf_get_clients())) or ""
-            )
+            .. vim.pesc(tostring(#vim.tbl_keys(vim.lsp.get_clients())) or "")
         end,
         { "diagnostics", sources = { "nvim_diagnostic" } },
       },

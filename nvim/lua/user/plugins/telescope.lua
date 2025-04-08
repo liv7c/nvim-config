@@ -20,7 +20,7 @@ return {
       end,
     },
     {
-      "<leader>F",
+      "<C-P>",
       function()
         require("telescope.builtin").find_files({
           no_ignore = true,
