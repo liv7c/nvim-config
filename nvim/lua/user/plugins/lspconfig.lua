@@ -71,13 +71,7 @@ return {
         },
       },
     })
-    setup_lsp("intelephense")
-    setup_lsp("phpactor", {
-      init_options = {
-        ["language_server_phpstan.enabled"] = false,
-        ["language_server_psalm.enabled"] = false,
-      },
-    })
+    setup_lsp("clangd")
     setup_lsp("pylsp")
     setup_lsp("volar")
     setup_lsp("ts_ls", {
@@ -99,11 +93,6 @@ return {
     })
     setup_lsp("html")
     setup_lsp("cssls")
-    setup_lsp("astro", {
-      formatting = {
-        enable = true,
-      },
-    })
     setup_lsp("emmet_ls", {
       filetypes = {
         "html",

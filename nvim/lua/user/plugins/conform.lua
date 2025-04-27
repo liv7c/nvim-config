@@ -26,6 +26,12 @@ return {
       html = { "prettierd", "prettier", stop_after_first = true },
       lua = { "stylua" },
       astro = { "prettier", stop_after_first = true },
+      c = { "clang_format" },
+    },
+    formatters = {
+      clang_format = {
+        prepend_args = { "--style=Google" }, -- ✨ added global default style for C
+      },
     },
     format_on_save = {
       timeout_ms = 1000,
