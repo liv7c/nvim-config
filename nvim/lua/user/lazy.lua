@@ -23,6 +23,6 @@ require("lazy").setup("user.plugins", {
     notify = false,
   },
   install = {
-    colorscheme = { "gruvbox" },
+    colorscheme = { "kanagawa" },
   },
 })
