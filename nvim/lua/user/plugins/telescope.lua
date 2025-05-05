@@ -81,6 +81,20 @@ return {
         require("telescope.builtin").lsp_document_symbols()
       end,
     },
+    {
+      "<leader>dd",
+      function()
+        require("telescope.builtin").diagnostics({ bufnr = 0 })
+      end,
+      desc = "Document Diagnostics (Telescope)",
+    },
+    {
+      "<leader>dD",
+      function()
+        require("telescope.builtin").diagnostics()
+      end,
+      desc = "Workspace Diagnostics (Telescope)",
+    },
   },
   config = function()
     local actions = require("telescope.actions")
