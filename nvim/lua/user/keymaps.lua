@@ -48,3 +48,8 @@ vim.keymap.set("n", "<leader>h", "<C-w>h", opts)
 vim.keymap.set("n", "<leader>j", "<C-w>j", opts)
 vim.keymap.set("n", "<leader>k", "<C-w>k", opts)
 vim.keymap.set("n", "<leader>l", "<C-w>l", opts)
+
+-- copy current file path
+vim.keymap.set("n", "<leader>cp", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+end, { desc = "Copy file path to clipboard" })
