@@ -12,18 +12,13 @@ vim.keymap.set("n", "<leader>Q", ":bufdo bdelete<CR>")
 vim.keymap.set("n", ",,", "<C-^>", { noremap = true, silent = true })
 
 -- Diagnostics.
-vim.keymap.set(
-  "n",
-  "[d",
-  vim.diagnostic.goto_prev,
-  { desc = "Go to previous [d]iagnostic" }
-)
-vim.keymap.set(
-  "n",
-  "]d",
-  vim.diagnostic.goto_next,
-  { desc = "Go to next [d]iagnostic" }
-)
+vim.keymap.set("n", "]d", function()
+  vim.diagnostic.jump({ count = 1 })
+end, { desc = "Next diagnostic" })
+
+vim.keymap.set("n", "[d", function()
+  vim.diagnostic.jump({ count = -1 })
+end, { desc = "Previous diagnostic" })
 
 -- Reselect visual selection after indenting.
 vim.keymap.set("v", "<", "<gv")
