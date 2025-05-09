@@ -12,7 +12,7 @@ o.tabstop = 2 -- insert 2 spaces for a tab
 o.cursorline = false -- highlight the current line
 o.number = true -- set numbered lines
 o.relativenumber = true -- set relative numbered lines
-o.numberwidth = 4 -- set number column width to 2 {default 4}
+o.numberwidth = 2 -- set number column width to 2 {default 4}
 o.signcolumn = "yes:2" -- always show the sign column, otherwise it would shift the text each time
 
 vim.opt.wrap = true
