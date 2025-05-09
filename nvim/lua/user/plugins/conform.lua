@@ -27,6 +27,7 @@ return {
       lua = { "stylua" },
       astro = { "prettier", stop_after_first = true },
       c = { "clang_format" },
+      cpp = { "clang_format" },
     },
     formatters = {
       clang_format = {
