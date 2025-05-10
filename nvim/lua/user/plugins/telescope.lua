@@ -35,7 +35,7 @@ return {
       end,
     },
     {
-      "<leader>g",
+      "<leader>sg",
       function()
         require("telescope").extensions.live_grep_args.live_grep_args({
           prompt_title = "Grep Project",
@@ -55,7 +55,7 @@ return {
       end,
     },
     {
-      "<leader>G",
+      "<leader>sG",
       function()
         require("telescope").extensions.live_grep_args.live_grep_args({
           prompt_title = "Grep All Files",
