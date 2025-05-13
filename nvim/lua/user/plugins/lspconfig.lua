@@ -122,6 +122,7 @@ return {
         },
       },
     })
+    setup_lsp("dockerls")
     setup_lsp("eslint", {
       on_attach = function(client, bufnr)
         on_attach(client, bufnr)
@@ -143,7 +144,7 @@ return {
 
     -- Diagnostic configuration
     vim.diagnostic.config({
-      virtual_text = false,
+      virtual_text = true,
       float = { source = true },
     })
 
