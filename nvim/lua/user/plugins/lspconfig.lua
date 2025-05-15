@@ -122,7 +122,9 @@ return {
         },
       },
     })
-    setup_lsp("dockerls")
+    setup_lsp("dockerls", {
+      filetypes = { "dockerfile" },
+    })
     setup_lsp("eslint", {
       on_attach = function(client, bufnr)
         on_attach(client, bufnr)
