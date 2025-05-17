@@ -31,3 +31,14 @@ vim.filetype.add({
     mdx = "markdown", -- Treat MDX as markdown
   },
 })
+
+local docker_compose_group =
+  vim.api.nvim_create_augroup("DockerComposeFiletype", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = docker_compose_group,
+  pattern = { "docker-compose*.yml", "docker-compose*.yaml" },
+  callback = function()
+    vim.bo.filetype = "yaml.docker-compose"
+  end,
+})

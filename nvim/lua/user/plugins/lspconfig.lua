@@ -125,6 +125,9 @@ return {
     setup_lsp("dockerls", {
       filetypes = { "dockerfile" },
     })
+    setup_lsp("docker_compose_language_service", {
+      filetypes = { "yaml.docker-compose" },
+    })
     setup_lsp("eslint", {
       on_attach = function(client, bufnr)
         on_attach(client, bufnr)
