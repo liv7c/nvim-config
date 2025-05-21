@@ -14,6 +14,7 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    local compare = require("cmp.config.compare")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
 
@@ -126,6 +127,35 @@ return {
       },
       experimental = {
         -- ghost_text = true,
+      },
+      sorting = {
+        priority_weight = 2,
+        comparators = {
+          function(entry1, entry2)
+            local kind1 = entry1:get_kind()
+            local kind2 = entry2:get_kind()
+
+            -- Put Fields on top inside structs
+            if
+              kind1 == cmp.lsp.CompletionItemKind.Field
+              and kind2 ~= cmp.lsp.CompletionItemKind.Field
+            then
+              return true
+            elseif
+              kind1 ~= cmp.lsp.CompletionItemKind.Field
+              and kind2 == cmp.lsp.CompletionItemKind.Field
+            then
+              return false
+            end
+          end,
+          compare.offset,
+          compare.exact,
+          compare.score,
+          compare.kind,
+          compare.sort_text,
+          compare.length,
+          compare.order,
+        },
       },
     })
   end,
