@@ -6,6 +6,7 @@ return {
     vim.g.VM_maps = {
       ["Add Cursor Down"] = "<C-j>", -- Ctrl+j to add cursor down
       ["Add Cursor Up"] = "<C-k>", -- Ctrl+k to add cursor up
+      ["Select All"] = "<Leader>A",
     }
   end,
 }
