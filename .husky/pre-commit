@@ -1,7 +1,3 @@
 # Find and format all Lua files
 echo "Formatting Lua files..."
 find nvim nvim/lua -type f -name "*.lua" -exec stylua {} \;
-
-# Add modified files back to staging
-echo "Staging formatted files..."
-git add $(find nvim nvim/lua -type f -name "*.lua")
