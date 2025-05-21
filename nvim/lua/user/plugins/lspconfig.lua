@@ -2,7 +2,7 @@
 
 return {
   "neovim/nvim-lspconfig",
-  event = "VeryLazy",
+  event = "BufReadPre",
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
