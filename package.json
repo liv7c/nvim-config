@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/liv7c/nvim-config#readme",
   "devDependencies": {
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0"
   }
 }

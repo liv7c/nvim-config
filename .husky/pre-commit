@@ -1,3 +1,2 @@
 # Find and format all Lua files
-echo "Formatting Lua files..."
-find nvim nvim/lua -type f -name "*.lua" -exec stylua {} \;
+npx lint-staged
