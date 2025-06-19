@@ -73,7 +73,6 @@ return {
     })
     setup_lsp("clangd")
     setup_lsp("pylsp")
-    setup_lsp("volar")
     setup_lsp("ts_ls", {
       init_options = {
         plugins = {

@@ -18,13 +18,14 @@ return {
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
 
-    require("luasnip/loaders/from_snipmate").lazy_load()
+    -- require("luasnip/loaders/from_snipmate").lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     local source_map = {
       buffer = "Buffer",
       nvim_lsp = "LSP",
-      nvim_lsp_signature_help = "Signature",
       luasnip = "LuaSnip",
+      nvim_lsp_signature_help = "Signature",
       nvim_lua = "Lua",
       path = "Path",
     }
