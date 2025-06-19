@@ -130,43 +130,11 @@ return {
         end, { "i", "s" }),
       }),
       sources = {
-        { name = "nvim_lsp" },
-        { name = "nvim_lsp_signature_help" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "path" },
-      },
-      experimental = {
-        -- ghost_text = true,
-      },
-      sorting = {
-        priority_weight = 2,
-        comparators = {
-          function(entry1, entry2)
-            local kind1 = entry1:get_kind()
-            local kind2 = entry2:get_kind()
-
-            -- Put Fields on top inside structs
-            if
-              kind1 == cmp.lsp.CompletionItemKind.Field
-              and kind2 ~= cmp.lsp.CompletionItemKind.Field
-            then
-              return true
-            elseif
-              kind1 ~= cmp.lsp.CompletionItemKind.Field
-              and kind2 == cmp.lsp.CompletionItemKind.Field
-            then
-              return false
-            end
-          end,
-          compare.offset,
-          compare.exact,
-          compare.score,
-          compare.kind,
-          compare.sort_text,
-          compare.length,
-          compare.order,
-        },
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "nvim_lsp_signature_help", priority = 900 },
+        { name = "luasnip", priority = 750 },
+        { name = "buffer", priority = 500 },
+        { name = "path", priority = 250 },
       },
     })
   end,
