@@ -103,8 +103,18 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
+          elseif luasnip.expandable() then
+            luasnip.expand()
+          elseif luasnip.jumpable(1) then
+            luasnip.jump(1)
+          elseif
+            vim.fn.col(".") > 1
+            and vim.fn
+              .getline(".")
+              :sub(vim.fn.col(".") - 1, vim.fn.col(".") - 1)
+              :match("%s")
+          then
+            fallback()
           else
             fallback()
           end
