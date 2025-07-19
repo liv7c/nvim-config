@@ -9,6 +9,9 @@ return {
     "b0o/schemastore.nvim",
   },
   config = function()
+    local lspconfig = require("lspconfig")
+    local util = require("lspconfig.util")
+
     -- Setup Mason for managing LSP servers
     require("mason").setup({ ui = { height = 0.8 } })
     require("mason-lspconfig").setup({
@@ -142,6 +145,15 @@ return {
           "<cmd>lua vim.lsp.buf.code_action()<CR>",
           { noremap = true, silent = true }
         )
+      end,
+      root_dir = function(fname)
+        return util.root_pattern(
+          ".eslintrc",
+          ".eslintrc.js",
+          ".eslintrc.json",
+          ".eslintrc.cjs",
+          "eslint.config.js"
+        )(fname)
       end,
     })
 
