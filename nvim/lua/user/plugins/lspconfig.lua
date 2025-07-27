@@ -13,7 +13,6 @@ return {
     local util = require("lspconfig.util")
 
     -- Setup Mason for managing LSP servers
-    require("mason").setup({ ui = { height = 0.8 } })
     require("mason-lspconfig").setup({
       ensure_installed = {},
       automatic_installation = true,
