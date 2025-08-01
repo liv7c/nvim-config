@@ -1,17 +1,9 @@
 return {
-  "rebelot/kanagawa.nvim",
+  "rose-pine/neovim",
+  name = "rose-pine",
   lazy = false,
   priority = 1000,
   config = function()
-    require("kanagawa").setup({
-      overrides = function(colors)
-        return {
-          SignColumn = { bg = "none" },
-          LineNr = { bg = "none" },
-          CursorLineNr = { bg = "none", fg = colors.theme.syn.constant }, -- optional: customize fg
-        }
-      end,
-    })
-    vim.cmd([[colorscheme kanagawa]])
+    vim.cmd("colorscheme rose-pine")
   end,
 }

@@ -14,9 +14,15 @@ return {
   },
   keys = {
     {
-      "<leader>f",
+      "<leader>ff",
       function()
         require("telescope.builtin").find_files()
+      end,
+    },
+    {
+      "<leader>fr",
+      function()
+        require("telescope.builtin").lsp_references()
       end,
     },
     {
@@ -149,7 +155,7 @@ return {
           prompt_title = "History",
         },
         lsp_references = {
-          previewer = false,
+          previewer = true,
         },
         lsp_definitions = {
           previewer = false,
