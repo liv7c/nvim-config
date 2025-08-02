@@ -14,7 +14,7 @@ return {
   },
   keys = {
     {
-      "<leader>ff",
+      "<C-P>",
       function()
         require("telescope.builtin").find_files()
       end,
@@ -23,15 +23,6 @@ return {
       "<leader>fr",
       function()
         require("telescope.builtin").lsp_references()
-      end,
-    },
-    {
-      "<C-P>",
-      function()
-        require("telescope.builtin").find_files({
-          no_ignore = true,
-          prompt_title = "All Files",
-        })
       end,
     },
     {
@@ -165,8 +156,5 @@ return {
         },
       },
     })
-
-    -- require('telescope').load_extension('fzf')
-    -- require('telescope').load_extension('ui-select')
   end,
 }
