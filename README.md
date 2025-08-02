@@ -63,9 +63,9 @@ Here are a few of the custom keybindings:
 - `gd`: Go to definition (LSP)
 - `gr`: Find references (LSP)
 - `K`: Show documentation (LSP)
-- `<Leader>f`: Search for a file (Telescope)
+- `<C-P>`: Search for a file (Telescope)
 - `<Leader>b`: View all buffers (Telescope)
-- `<Leader>g`: Grep for a word (Telescope)
+- `<Leader>sg`: Grep for a word (Telescope)
 - `<Leader>rn`: Rename a symbol (LSP)
 - `<Leader>ca`: Trigger code actions (LSP)
 
