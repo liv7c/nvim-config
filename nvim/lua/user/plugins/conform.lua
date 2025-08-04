@@ -28,10 +28,15 @@ return {
       astro = { "prettier", stop_after_first = true },
       c = { "clang_format" },
       cpp = { "clang_format" },
+      sh = { "shfmt" },
+      bash = { "shfmt" },
     },
     formatters = {
       clang_format = {
         prepend_args = { "--style=Google" }, -- ✨ added global default style for C
+      },
+      shfmt = {
+        prepend_args = { "-i", "4", "-bn", "-ci", "-sr" },
       },
     },
     format_on_save = {
