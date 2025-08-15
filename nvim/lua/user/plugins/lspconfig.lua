@@ -155,6 +155,15 @@ return {
         )(fname)
       end,
     })
+    setup_lsp("astro", {
+      filetypes = { "astro" },
+      root_dir = util.root_pattern(
+        "package.json",
+        "tsconfig.json",
+        "jsconfig.json",
+        ".git"
+      ),
+    })
 
     -- Global diagnostic keymaps
     vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>")

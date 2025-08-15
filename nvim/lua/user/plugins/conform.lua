@@ -25,7 +25,7 @@ return {
       },
       html = { "prettierd", "prettier", stop_after_first = true },
       lua = { "stylua" },
-      astro = { "prettier", stop_after_first = true },
+      astro = { "prettierd", "prettier", "eslint_d", stop_after_first = true },
       c = { "clang_format" },
       cpp = { "clang_format" },
       sh = { "shfmt" },
