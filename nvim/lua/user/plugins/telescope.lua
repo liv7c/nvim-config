@@ -95,6 +95,7 @@ return {
   },
   config = function()
     local actions = require("telescope.actions")
+    local lga_actions = require("telescope-live-grep-args.actions")
 
     require("telescope").setup({
       defaults = {
@@ -123,13 +124,23 @@ return {
         live_grep_args = {
           mappings = {
             i = {
-              ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
+              ["<C-k>"] = lga_actions.quote_prompt(),
               ["<C-space>"] = actions.to_fuzzy_refine,
+              -- Toggle literal search mode (safe for symbols like {, *, etc.)
+              ["<C-f>"] = lga_actions.quote_prompt({
+                postfix = " --fixed-strings ",
+              }),
             },
           },
         },
         ["ui-select"] = {
           require("telescope.themes").get_dropdown(),
+        },
+        fzf = {
+          fuzzy = true, -- enable fuzzy matching
+          override_generic_sorter = true, -- better sorter for everything
+          override_file_sorter = true,
+          case_mode = "smart_case", -- or "ignore_case" / "respect_case"
         },
       },
       pickers = {
@@ -156,5 +167,10 @@ return {
         },
       },
     })
+
+    -- Load extensions safely
+    pcall(require("telescope").load_extension, "fzf")
+    pcall(require("telescope").load_extension, "live_grep_args")
+    pcall(require("telescope").load_extension, "ui-select")
   end,
 }
