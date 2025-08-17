@@ -164,6 +164,13 @@ return {
         ".git"
       ),
     })
+    setup_lsp("prismals", {
+      settings = {
+        prisma = {
+          fileWatcher = true,
+        },
+      },
+    })
 
     -- Global diagnostic keymaps
     vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>")
