@@ -147,6 +147,12 @@ return {
       end,
       root_dir = function(fname)
         return util.root_pattern(
+          -- Flat config (ESLint v9+)
+          "eslint.config.js",
+          "eslint.config.cjs",
+          "eslint.config.mjs",
+          "eslint.config.ts",
+          -- Legacy config files
           ".eslintrc",
           ".eslintrc.js",
           ".eslintrc.json",
@@ -170,6 +176,10 @@ return {
           fileWatcher = true,
         },
       },
+    })
+    setup_lsp("stylelint_lsp", {
+      settings = { stylelintplus = { autoFixOnFormat = false } },
+      filetypes = { "css", "scss", "less" },
     })
 
     -- Global diagnostic keymaps
