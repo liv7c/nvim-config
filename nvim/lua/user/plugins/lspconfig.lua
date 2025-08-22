@@ -24,6 +24,12 @@ return {
       vim.lsp.protocol.make_client_capabilities()
     )
 
+    -- Function to show all buffer diagnostics in location list (vim-go style)
+    local function show_diagnostics_loclist()
+      vim.diagnostic.setloclist({ open = false })
+      vim.cmd("topleft 12 lopen")
+    end
+
     local function on_attach(client, bufnr)
       local opts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -182,8 +188,13 @@ return {
       filetypes = { "css", "scss", "less" },
     })
 
-    -- Global diagnostic keymaps
-    vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>")
+    -- Global diagnostic keymaps - Using built-in location list
+    vim.keymap.set(
+      "n",
+      "<leader>d",
+      show_diagnostics_loclist,
+      { desc = "Show diagnostics in location list" }
+    )
     vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
     vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 
@@ -196,19 +207,19 @@ return {
     -- Sign definitions
     vim.fn.sign_define(
       "diagnosticsignerror",
-      { text = "", texthl = "diagnosticsignerror" }
+      { text = "", texthl = "diagnosticsignerror" }
     )
     vim.fn.sign_define(
       "diagnosticsignwarn",
-      { text = "", texthl = "diagnosticsignwarn" }
+      { text = "", texthl = "diagnosticsignwarn" }
     )
     vim.fn.sign_define(
       "diagnosticsigninfo",
-      { text = "", texthl = "diagnosticsigninfo" }
+      { text = "", texthl = "diagnosticsigninfo" }
     )
     vim.fn.sign_define(
       "diagnosticsignhint",
-      { text = "", texthl = "diagnosticsignhint" }
+      { text = "", texthl = "diagnosticsignhint" }
     )
   end,
 }

@@ -20,6 +20,20 @@ vim.keymap.set("n", "[d", function()
   vim.diagnostic.jump({ count = -1 })
 end, { desc = "Previous diagnostic" })
 
+-- Location list
+vim.keymap.set(
+  "n",
+  "<leader>ll",
+  "<cmd>lopen<CR>",
+  { desc = "Open location list" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>lc",
+  "<cmd>lclose<CR>",
+  { desc = "Close location list" }
+)
+
 -- Reselect visual selection after indenting.
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
