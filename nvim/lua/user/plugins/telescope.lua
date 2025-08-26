@@ -1,5 +1,28 @@
 -- Fuzzy finder
 
+local function rg_common()
+  return {
+    "rg",
+    "--hidden",
+    "--color=never",
+    "--no-heading",
+    "--with-filename",
+    "--line-number",
+    "--column",
+    "--smart-case",
+    "--max-columns=300",
+    "--max-columns-preview",
+    "--max-filesize", "1M",
+    -- never descend into these even if they exist
+    "--glob", "!.git/",
+    "--glob", "!node_modules/",
+    "--glob", "!dist/",
+    "--glob", "!build/",
+    "--glob", "!target/",
+    "--glob", "!coverage/",
+  }
+end
+
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
@@ -36,39 +59,18 @@ return {
       function()
         require("telescope").extensions.live_grep_args.live_grep_args({
           prompt_title = "Grep Project",
-          vimgrep_arguments = {
-            "rg",
-            "--hidden",
-            "-L",
-            "--color=never",
-            "--sort=path",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-          },
+          vimgrep_arguments = rg_common(),
         })
       end,
     },
     {
       "<leader>sG",
       function()
+        local args = rg_common()
+        table.insert(args, "--no-ignore")
         require("telescope").extensions.live_grep_args.live_grep_args({
           prompt_title = "Grep All Files",
-          vimgrep_arguments = {
-            "rg",
-            "--hidden",
-            "--no-ignore",
-            "-L",
-            "--color=never",
-            "--sort=path",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-          },
+          vimgrep_arguments = args,
         })
       end,
     },
@@ -113,7 +115,9 @@ return {
         sorting_strategy = "ascending",
         mappings = {
           i = {
-            ["<esc>"] = actions.close,
+            ["<esc>"] = function()
+                vim.cmd("stopinsert")
+            end,
             ["<C-Down>"] = actions.cycle_history_next,
             ["<C-Up>"] = actions.cycle_history_prev,
           },
