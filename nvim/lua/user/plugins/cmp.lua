@@ -8,7 +8,7 @@ return {
     "hrsh7th/cmp-nvim-lsp-signature-help",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "hrsh7th/cmp-copilot",
+    "zbirenbaum/copilot-cmp",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind-nvim",
@@ -29,7 +29,7 @@ return {
       nvim_lsp_signature_help = "Signature",
       nvim_lua = "Lua",
       path = "Path",
-      copilot = "Copilot",
+      -- copilot = "Copilot",
     }
 
     local function ltrim(s)
@@ -55,6 +55,8 @@ return {
         fields = { "kind", "abbr", "menu" },
         format = lspkind.cmp_format({
           mode = "symbol",
+          max_width = 50,
+          symbol_map = { Copilot = "" },
           -- See: https://www.reddit.com/r/neovim/comments/103zetf/how_can_i_get_a_vscodelike_tailwind_css/
           before = function(entry, vim_item)
             -- Replace the 'menu' field with the kind and source
@@ -132,12 +134,12 @@ return {
         end, { "i", "s" }),
       }),
       sources = {
-        { name = "nvim_lsp", priority = 1000 },
-        { name = "nvim_lsp_signature_help", priority = 900 },
-        { name = "luasnip", priority = 750 },
-        { name = "copilot", priority = 600 },
-        { name = "buffer", priority = 500 },
-        { name = "path", priority = 250 },
+        { name = "copilot", priority = 2 },
+        { name = "nvim_lsp", priority = 2 },
+        { name = "nvim_lsp_signature_help", priority = 2 },
+        { name = "luasnip", priority = 2 },
+        { name = "buffer", priority = 2 },
+        { name = "path", priority = 2 },
       },
     })
   end,
