@@ -34,6 +34,7 @@ return {
       css = { "prettierd", "prettier", stop_after_first = true },
       scss = { "prettierd", "prettier", stop_after_first = true },
       less = { "prettierd", "prettier", stop_after_first = true },
+      rust = { "rustfmt" },
     },
     formatters = {
       clang_format = {

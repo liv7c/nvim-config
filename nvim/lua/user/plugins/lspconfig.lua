@@ -17,8 +17,9 @@ return {
     })
 
     -- Capabilities (nvim-cmp)
-    local capabilities = require("cmp_nvim_lsp")
-      .default_capabilities(vim.lsp.protocol.make_client_capabilities())
+    local capabilities = require("cmp_nvim_lsp").default_capabilities(
+      vim.lsp.protocol.make_client_capabilities()
+    )
 
     -- Helpers ---------------------------------------------------------------
     local function show_diagnostics_loclist()
@@ -35,6 +36,11 @@ return {
       end
       if client.server_capabilities.documentRangeFormattingProvider then
         client.server_capabilities.documentRangeFormattingProvider = false
+      end
+
+      -- enable inlay hints if supported
+      if client.server_capabilities.inlayHintProvider then
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       end
 
       -- keymaps
@@ -81,14 +87,25 @@ return {
       },
       tailwindcss = {},
       jsonls = {
-        settings = { json = { schemas = require("schemastore").json.schemas() } },
+        settings = {
+          json = { schemas = require("schemastore").json.schemas() },
+        },
       },
       html = {},
       cssls = {},
       emmet_ls = {
         filetypes = {
-          "html", "astro", "typescriptreact", "javascriptreact",
-          "css", "sass", "scss", "less", "svelte", "handlebars", "template",
+          "html",
+          "astro",
+          "typescriptreact",
+          "javascriptreact",
+          "css",
+          "sass",
+          "scss",
+          "less",
+          "svelte",
+          "handlebars",
+          "template",
         },
       },
       lua_ls = {
@@ -97,36 +114,71 @@ return {
             runtime = { version = "LuaJIT" },
             workspace = {
               checkThirdParty = false,
-              library = { "${3rd}/luv/library", unpack(vim.api.nvim_get_runtime_file("", true)) },
+              library = {
+                "${3rd}/luv/library",
+                unpack(vim.api.nvim_get_runtime_file("", true)),
+              },
             },
           },
         },
       },
       dockerls = { filetypes = { "dockerfile" } },
-      docker_compose_language_service = { filetypes = { "yaml.docker-compose" } },
-      eslint = vim.tbl_deep_extend("force",
+      docker_compose_language_service = {
+        filetypes = { "yaml.docker-compose" },
+      },
+      eslint = vim.tbl_deep_extend(
+        "force",
         root_markers({
           -- flat config (ESLint v9+)
-          "eslint.config.js","eslint.config.cjs","eslint.config.mjs","eslint.config.ts",
+          "eslint.config.js",
+          "eslint.config.cjs",
+          "eslint.config.mjs",
+          "eslint.config.ts",
           -- legacy
-          ".eslintrc",".eslintrc.js",".eslintrc.json",".eslintrc.cjs",
+          ".eslintrc",
+          ".eslintrc.js",
+          ".eslintrc.json",
+          ".eslintrc.cjs",
         }),
         {
           on_attach = function(client, bufnr)
             on_attach(client, bufnr)
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action,
-              { noremap = true, silent = true, buffer = bufnr })
+            vim.keymap.set(
+              "n",
+              "<leader>ca",
+              vim.lsp.buf.code_action,
+              { noremap = true, silent = true, buffer = bufnr }
+            )
           end,
         }
       ),
-      astro = vim.tbl_deep_extend("force",
-        root_markers({ "package.json", "tsconfig.json", "jsconfig.json", ".git" }),
+      astro = vim.tbl_deep_extend(
+        "force",
+        root_markers({
+          "package.json",
+          "tsconfig.json",
+          "jsconfig.json",
+          ".git",
+        }),
         { filetypes = { "astro" } }
       ),
       prismals = { settings = { prisma = { fileWatcher = true } } },
       stylelint_lsp = {
         settings = { stylelintplus = { autoFixOnFormat = false } },
         filetypes = { "css", "scss", "less" },
+      },
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = { allFeatures = true },
+            checkOnSave = true,
+            inlayHints = {
+              typeHints = { enable = true },
+              parameterHints = { enable = true },
+              chainingHints = { enable = true },
+            },
+          },
+        },
       },
     }
 
@@ -135,17 +187,36 @@ return {
       vim.lsp.enable(name)
     end
 
+    -- Inlay hints styling
+    vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#7c7c7c", italic = true })
+
     -- Diagnostics UI
-    vim.keymap.set("n", "<leader>d", show_diagnostics_loclist, { desc = "Show diagnostics (loclist)" })
+    vim.keymap.set(
+      "n",
+      "<leader>d",
+      show_diagnostics_loclist,
+      { desc = "Show diagnostics (loclist)" }
+    )
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
     vim.diagnostic.config({ virtual_text = true, float = { source = true } })
 
     -- Signs (keep your highlight groups)
-    vim.fn.sign_define("diagnosticsignerror", { text = "", texthl = "diagnosticsignerror" })
-    vim.fn.sign_define("diagnosticsignwarn",  { text = "", texthl = "diagnosticsignwarn" })
-    vim.fn.sign_define("diagnosticsigninfo",  { text = "", texthl = "diagnosticsigninfo" })
-    vim.fn.sign_define("diagnosticsignhint",  { text = "", texthl = "diagnosticsignhint" })
+    vim.fn.sign_define(
+      "diagnosticsignerror",
+      { text = "", texthl = "diagnosticsignerror" }
+    )
+    vim.fn.sign_define(
+      "diagnosticsignwarn",
+      { text = "", texthl = "diagnosticsignwarn" }
+    )
+    vim.fn.sign_define(
+      "diagnosticsigninfo",
+      { text = "", texthl = "diagnosticsigninfo" }
+    )
+    vim.fn.sign_define(
+      "diagnosticsignhint",
+      { text = "", texthl = "diagnosticsignhint" }
+    )
   end,
 }
-
