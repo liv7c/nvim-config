@@ -67,3 +67,8 @@ vim.keymap.set("n", "<leader>l", "<C-w>l", opts)
 vim.keymap.set("n", "<leader>cp", function()
   vim.fn.setreg("+", vim.fn.expand("%:p"))
 end, { desc = "Copy file path to clipboard" })
+
+-- toggle relative line numbers
+vim.keymap.set("n", "<leader>tr", function()
+  vim.opt.relativenumber = not vim.opt.relativenumber:get()
+end, { desc = "Toggle relative line numbers" })
