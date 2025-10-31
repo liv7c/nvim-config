@@ -38,11 +38,6 @@ return {
         client.server_capabilities.documentRangeFormattingProvider = false
       end
 
-      -- enable inlay hints if supported
-      if client.server_capabilities.inlayHintProvider then
-        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-      end
-
       -- keymaps
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
       vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -181,9 +176,6 @@ return {
       vim.lsp.config(name, vim.tbl_deep_extend("force", common, cfg or {}))
       vim.lsp.enable(name)
     end
-
-    -- Inlay hints styling
-    vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#7c7c7c", italic = true })
 
     -- Diagnostics UI
     vim.keymap.set(
