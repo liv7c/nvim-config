@@ -172,11 +172,6 @@ return {
           ["rust-analyzer"] = {
             cargo = { allFeatures = true },
             checkOnSave = true,
-            inlayHints = {
-              typeHints = { enable = true },
-              parameterHints = { enable = true },
-              chainingHints = { enable = true },
-            },
           },
         },
       },
