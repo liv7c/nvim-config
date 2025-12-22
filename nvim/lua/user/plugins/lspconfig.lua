@@ -186,8 +186,12 @@ return {
       show_diagnostics_loclist,
       { desc = "Show diagnostics (loclist)" }
     )
-    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-    vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+    vim.keymap.set("n", "[d", function()
+      vim.diagnostic.jump({ count = -1, float = true })
+    end)
+    vim.keymap.set("n", "]d", function()
+      vim.diagnostic.jump({ count = 1, float = true })
+    end)
     vim.diagnostic.config({ virtual_text = true, float = { source = true } })
 
     -- Signs (keep your highlight groups)
