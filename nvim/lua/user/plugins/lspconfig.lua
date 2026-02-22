@@ -16,6 +16,9 @@ return {
       automatic_installation = true,
     })
 
+    -- LSP log level
+    vim.lsp.set_log_level("error")
+
     -- Capabilities (nvim-cmp)
     local capabilities = require("cmp_nvim_lsp").default_capabilities(
       vim.lsp.protocol.make_client_capabilities()
@@ -70,6 +73,14 @@ return {
       clangd = {},
       pylsp = {},
       ts_ls = {
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "html",
+        },
         init_options = {
           plugins = {
             {
@@ -77,6 +88,10 @@ return {
               location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
               languages = { "javascript", "typescript", "vue" },
             },
+          },
+          preferences = {
+            includeCompletionsForModuleExports = true,
+            includeCompletionsWithInsertText = true,
           },
         },
       },
@@ -171,6 +186,9 @@ return {
             },
           },
         },
+      },
+      wasm_language_server = {
+        filetypes = { "wasm", "wat" },
       },
     }
 
